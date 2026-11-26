@@ -75,7 +75,8 @@ def build(root, output):
             if not isinstance(location, dict):
                 raise ValueError(unit['id'] + ': source_location must be an object')
             source = ' · '.join(str(k) + ': ' + str(v) for k, v in location.items() if v is not None)
-            body += f'<article class="unit" id="{h(unit["id"])}" data-depth="{h(unit.get("depth", "brief"))}" data-section="{h(section)}" data-search><div><div class="meta">{h(unit["id"])} · {h(unit.get("depth", "brief"))}{(' · 来源：' + h(source)) if source else ''}</div><p class="original" lang="en">{original(unit)}</p>'
+            source_meta = ' · 来源：' + h(source) if source else ''
+            body += f'<article class="unit" id="{h(unit["id"])}" data-depth="{h(unit.get("depth", "brief"))}" data-section="{h(section)}" data-search><div><div class="meta">{h(unit["id"])} · {h(unit.get("depth", "brief"))}{source_meta}</div><p class="original" lang="en">{original(unit)}</p>'
             if unit.get('image_path'):
                 body += '<img class="figure-image" src="' + image(root, unit['image_path']) + '" alt="' + h(unit['original_text']) + '">'
             body += '<div class="translation" lang="zh-CN">' + h(unit.get('translation_zh', '')) + '</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>' + h(role) + '</p><p><strong>分析者重构：</strong>' + h(unit.get('logical_role', '')) + '</p><p>' + h(unit.get('critical_commentary', '')) + '</p></details></aside></article>'
