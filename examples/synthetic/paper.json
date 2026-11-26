@@ -1,0 +1,8 @@
+{
+  "title": "Error Detection and False Alerts: A Synthetic Reading Example",
+  "authors": "Academic Paper Annotator contributors · 自编合成教学材料",
+  "notice": "所有材料和数据均为自编合成示例，不是真实研究。浏览器呈现未在本环境验证；静态与脚本逻辑检查另列。",
+  "guide": "对照两条规则的检出与误报，重点核对不同指标的分母。",
+  "source_note": "来源为本目录 source.md 和 reports.csv。无患者数据，无第三方论文全文，无外部附件。中文和批注为配套自编说明。",
+  "references": []
+}

@@ -1,0 +1,134 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Error Detection and False Alerts: A Synthetic Reading Example</title><style>:root{--ink:#14253d;--paper:#faf8f3;--muted:#5f6570;--zh:#f0ece2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:#2b2f36;font:16px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif}a{color:#224f7c}button,input,select{font:inherit}button,select,input[type=search]{border:1px solid #a9acb2;background:#fff;border-radius:4px;min-height:40px;padding:.3rem .65rem}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #a65e0b;outline-offset:3px}.skip{position:absolute;top:-80px}.skip:focus{top:0;background:white;z-index:100}header{background:var(--ink);color:white;padding:44px max(4vw,20px)}header .eyebrow{letter-spacing:.16em;font-size:12px}h1{font-size:clamp(1.8rem,3.6vw,3.2rem);line-height:1.2;max-width:1100px;margin:.6rem 0}header p{max-width:1050px}header a{color:white}main{max-width:1280px;margin:auto;padding:20px 30px}h2,h3,h4{color:var(--ink);line-height:1.35}h2{font-size:1.6rem;margin:2.3rem 0 1rem}h3{font-size:1.2rem}section,article,figure,[id]{scroll-margin-top:180px}.notice{border-left:4px solid #a17d3f;background:#eee6d6;padding:16px 20px}.meta{font-size:.84rem;color:var(--muted)}.tools{position:sticky;top:0;background:#faf8f3f5;z-index:5;border-bottom:1px solid #bbb;padding:9px 16px}.tools .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.tools nav{display:flex;gap:16px;overflow:auto;white-space:nowrap;font-size:.9rem}.tools label{font-size:.88rem}progress{width:100px;height:9px}.unit{display:grid;grid-template-columns:minmax(0,64fr) minmax(0,36fr);gap:24px;border-bottom:1px solid #ccc;padding:26px 0}.original{font:17px/1.85 Georgia,"Times New Roman",serif;overflow-wrap:anywhere;white-space:pre-wrap}.translation{background:var(--zh);border-left:3px solid #ad9979;padding:16px;white-space:pre-wrap}.unit aside{font-size:.93rem;padding-top:10px}.unit summary{cursor:pointer;color:var(--ink);font-weight:650}.unit .crit{border-top:1px solid #ccc;padding-top:10px}.reading-current{border-left:3px solid #b69046;padding-left:10px}.search-hit{outline:3px solid #c57600;outline-offset:4px}.search-label{font-weight:bold;color:#9b5200}.hl{color:inherit;padding:0}.hl.claim{background:#f4d46a}.hl.concept{background:#e99491}.hl.evidence{background:#9dbfe8}.hl.limitation{background:#a9d8b5}.hl.method{background:#c4afe5}.hl.off{background:transparent}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.86rem}.legend label{border-bottom:3px solid var(--color)}.hidden{display:none!important}.table-scroll,.graph-scroll{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%;font-size:.85rem}th,td{border:1px solid #c4c6c8;padding:7px 9px;text-align:left;vertical-align:top}th{background:#e8e5dc}thead{display:table-header-group}.cn{display:block;color:#5f6570;font-size:.83em}caption{font-weight:bold;text-align:left;margin:.7rem 0}.figure-image{width:100%;height:auto;border:1px solid #d1d1cf}.figure{padding:20px 0;margin:20px 0;border-bottom:1px solid #ccc}.figure .original{font-size:15px}.section-review{padding:16px 20px;border:1px solid #c5c4bf;margin:20px 0}.reference-list{font-size:.9rem}.reference-list li{margin:9px 0}.backlink{font-size:.85rem}.callout{background:#f0ece2;padding:15px 20px}footer{padding:30px;color:var(--muted)}body[data-mode=english] .translation,body[data-mode=english] .unit aside{display:none}body[data-mode=focus] .translation{display:none}body[data-mode=focus] .unit aside{background:#f0ece2;padding:16px}body.no-annotations .unit aside{display:none}body[data-mode=english] .unit{grid-template-columns:1fr}sup{font-size:.7em}svg text{font-family:inherit}.summary-list{columns:2}.extras{font-size:.9rem}details>summary{min-height:36px;cursor:pointer}.no-js-note{font-size:.9rem}body.js .no-js-note{display:none}
+@media(max-width:760px){main{padding:12px 16px}.unit{display:block}.unit aside{padding-top:16px}.tools{position:static;padding:10px}.tools .row{gap:6px}.summary-list{columns:1}header{padding:28px 18px}section,article,figure,[id]{scroll-margin-top:12px}.original{font-size:16px}.graph-scroll svg{min-width:800px}table{min-width:650px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{font:10.5pt/1.5 serif;background:white;color:black}header{background:white;color:black;padding:0}header a{color:black}h1{font-size:22pt}.tools,.skip,.legend,.backlink,.print-hide{display:none!important}main{padding:0;max-width:none}.unit{display:block;padding:12px 0}.hidden,body[data-mode] .translation,body[data-mode] .unit aside,body.no-annotations .unit aside{display:block!important}.translation{background:#f5f2e9;break-inside:auto}.original{font-size:10.5pt;line-height:1.5}.unit aside{font-size:10pt}.figure{break-inside:auto}.figure-image{max-height:245mm;object-fit:contain}.table-scroll{overflow:visible}table{min-width:0;width:100%;font-size:7.5pt;table-layout:auto}th,td{padding:3px;overflow-wrap:anywhere}.graph-scroll{overflow:visible}.notice{background:white}a{color:black}.reference-list{font-size:9pt}.search-hit{outline:none}.reading-current{border:0;padding-left:0}details>*{display:block!important}.pdf-appendix{display:none!important}svg{max-width:100%;height:auto}h2,h3{break-after:avoid}}
+</style></head><body><a class="skip" href="#main">跳过导航</a><header><div class="eyebrow">ACADEMIC PAPER ANNOTATOR</div><h1>Error Detection and False Alerts: A Synthetic Reading Example</h1><p>Academic Paper Annotator contributors · 自编合成教学材料</p></header><div id="controls" hidden class="tools print-hide"><nav aria-label="章节导航"><a href="#S001">Abstract</a><a href="#S002">Methods</a><a href="#S003">Results</a><a href="#S004">Discussion</a><a href="#S005">Conclusion</a><a href="#claims">证据矩阵</a><a href="#notes">来源与检查</a></nav><div class="row"><label>模式 <select id="mode"><option value="bilingual">英中对照</option><option value="english">仅英文</option><option value="focus">批注重点</option></select></label><label><input id="annotations" type="checkbox" checked>批注</label><label><input id="deep" type="checkbox">仅深读</label><button id="expand">全部展开</button><button id="collapse">全部折叠</button><button id="print">打印</button><span id="current" class="meta"></span><progress id="progress" max="100" value="0" aria-label="浏览进度"></progress><span id="progress-text" class="meta"></span></div><div class="row"><label for="search">搜索</label><input id="search" type="search"><button id="search-go">查找</button><button id="prev">上一个</button><button id="next">下一个</button><button id="clear">清除</button><span id="results" aria-live="polite">搜索原文、译文与批注</span></div><div class="legend"><label><input data-hl="claim" type="checkbox" checked>主张</label><label><input data-hl="concept" type="checkbox" checked>概念</label><label><input data-hl="evidence" type="checkbox" checked>证据</label><label><input data-hl="limitation" type="checkbox" checked>局限</label><label><input data-hl="method" type="checkbox" checked>方法</label></div></div><main id="main"><p class="no-js-note">JavaScript 关闭时仍可阅读全部内容。</p><section id="guide"><h2>导读</h2><p class="notice">所有材料和数据均为自编合成示例，不是真实研究。浏览器呈现未在本环境验证；静态与脚本逻辑检查另列。</p><p>对照两条规则的检出与误报，重点核对不同指标的分母。</p><p class="meta">正文状态：6 / 6 个单元译文完成。最终验证以对应文件摘要的 release-report.json 为准。</p></section><section id="S001"><h2>Abstract</h2><article class="unit" id="P001" data-depth="brief" data-section="Abstract" data-search><div><div class="meta">P001 · brief</div><p class="original" lang="en">This authored demonstration contains 200 synthetic reports. It illustrates why <mark class="hl claim" title="claim">higher error detection</mark> does not necessarily mean better overall review. No patients, readers, or trained models were studied.</p><div class="translation" lang="zh-CN">本自编演示包含 200 份合成报告，用来说明更高的错误检出率不一定意味着更好的总体审阅效果。本演示未研究患者、阅片者或受训模型。</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>主张与范围</p><p><strong>分析者重构：</strong>界定这是教学构造，结论只涉及给定算术例子。</p><p>不能将这些数字当作真实模型的临床证据。</p></details></aside></article><aside class="section-review"><h3>章节总结 · 分析者重构</h3><p>先界定合成材料的性质；不把教学例子当实证研究。</p></aside></section><section id="S002"><h2>Methods</h2><article class="unit" id="P002" data-depth="brief" data-section="Methods" data-search><div><div class="meta">P002 · brief</div><p class="original" lang="en">The synthetic dataset has <mark class="hl method" title="method">40 reports with errors</mark> and 160 reports without errors. The two conditions are constructed rules applied to the same reports, rather than independent human reading experiments.</p><div class="translation" lang="zh-CN">合成数据集包含 40 份有错误报告和 160 份无错误报告。两个条件是在同一批报告上应用的构造规则，而不是独立的人工阅片实验。</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>方法</p><p><strong>分析者重构：</strong>明确两组结果共享同一数据及已知标签。</p><p>同一病例构造比较不证明规则在新材料上的泛化能力。</p></details></aside></article><aside class="section-review"><h3>章节总结 · 分析者重构</h3><p>两个条件共享样本，不能误称独立阅片实验。</p></aside></section><section id="S003"><h2>Results</h2><article class="unit" id="P003" data-depth="deep" data-section="Results" data-search><div><div class="meta">P003 · deep</div><p class="original" lang="en">Rule A flags 26 of the 40 error reports and 8 of the 160 correct reports. Rule B flags <mark class="hl evidence" title="evidence">35 of the 40 error reports</mark> and 15 of the 160 correct reports.</p><div class="translation" lang="zh-CN">规则 A 标记 40 份错误报告中的 26 份，以及 160 份正确报告中的 8 份。规则 B 标记 40 份错误报告中的 35 份，以及 160 份正确报告中的 15 份。</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>证据</p><p><strong>分析者重构：</strong>提供表格和图形的原始计数，区分真正例和假警报。</p><p>规则 B 提高检出数量，也增加对正确报告的误报。</p></details></aside></article><article class="unit" id="P004" data-depth="deep" data-section="Results" data-search><div><div class="meta">P004 · deep</div><p class="original" lang="en">Recall rises from 0.65 to 0.875, but the false-alert proportion also rises from 0.05 to 0.09375. <mark class="hl concept" title="concept">The denominator for recall is 40</mark>, whereas the denominator for false alerts is 160.</p><div class="translation" lang="zh-CN">召回率从 0.65 升至 0.875，但假警报比例也从 0.05 升至 0.09375。召回率的分母是 40，而假警报比例的分母是 160。</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>指标比较</p><p><strong>分析者重构：</strong>用两个不同分母解释同一规则改变的收益与代价。</p><p>不要把假警报比例的分母换成全部 200 份报告，或把召回率升高概括为所有指标均改善。</p></details></aside></article><aside class="section-review"><h3>章节总结 · 分析者重构</h3><p>检出和误报变化都有明确分母。</p></aside></section><section id="S004"><h2>Discussion</h2><article class="unit" id="P005" data-depth="brief" data-section="Discussion" data-search><div><div class="meta">P005 · brief</div><p class="original" lang="en">A reviewer who only sees recall may prefer Rule B. That preference depends on the costs of missed errors and unnecessary alerts. <mark class="hl limitation" title="limitation">These costs were not measured</mark>, so the demonstration does not establish which rule is more useful.</p><div class="translation" lang="zh-CN">只看到召回率的审阅者可能更偏好规则 B。该偏好取决于漏检错误和不必要警报的代价。本演示没有测量这些代价，因此不能确定哪条规则更有用。</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>局限</p><p><strong>分析者重构：</strong>将指标变化与实际效用分开，避免把算术例子提升为部署结论。</p><p>真实应用需要额外的效用和工作流程研究。</p></details></aside></article><aside class="section-review"><h3>章节总结 · 分析者重构</h3><p>指标不等于临床或业务效用。</p></aside></section><section id="S005"><h2>Conclusion</h2><article class="unit" id="P006" data-depth="brief" data-section="Conclusion" data-search><div><div class="meta">P006 · brief</div><p class="original" lang="en">The transferable lesson is to <mark class="hl claim" title="claim">report both benefits and errors with their denominators</mark>. All counts can be regenerated from the accompanying CSV. The example is complete as an authored teaching fixture, not as evidence about a medical system.</p><div class="translation" lang="zh-CN">可迁移的做法是同时报告收益、错误及各自分母。所有计数均可由随附 CSV 重建。该示例是完整的自编教学样例，不是医疗系统的实证证据。</div></div><aside><details class="annotation" open><summary>批注</summary><p><strong>功能：</strong>结论</p><p><strong>分析者重构：</strong>总结本例能支持的阅读方法，并提供可复算数据。</p><p>不对真实论文的模型效果作出推断。</p></details></aside></article><aside class="section-review"><h3>章节总结 · 分析者重构</h3><p>把计数、指标、限制和可复算数据一起交付。</p></aside></section><figure id="F001" class="figure" data-search><h3>F001</h3><img class="figure-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlN5bnRoZXRpYyByZWNhbGwgYW5kIGZhbHNlIGFsZXJ0IHByb3BvcnRpb25zIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2ZhZjhmMyIvPjxnIGZpbGw9IiMxNDI1M2QiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIj48dGV4dCB4PSI0MCIgeT0iNDAiPlN5bnRoZXRpYyBydWxlczogYmVuZWZpdHMgYW5kIGZhbHNlIGFsZXJ0czwvdGV4dD48dGV4dCB4PSI0MCIgeT0iMTA1Ij5SZWNhbGwgKGRlbm9taW5hdG9yIDQwKTwvdGV4dD48dGV4dCB4PSI0MCIgeT0iMjQ1Ij5GYWxzZSBhbGVydHMgKGRlbm9taW5hdG9yIDE2MCk8L3RleHQ+PC9nPjxnIGZpbGw9IiM5ZGJmZTgiPjxyZWN0IHg9IjI2MCIgeT0iNzUiIHdpZHRoPSIzMjUiIGhlaWdodD0iMzIiLz48cmVjdCB4PSIyNjAiIHk9IjIxNSIgd2lkdGg9IjI1IiBoZWlnaHQ9IjMyIi8+PC9nPjxnIGZpbGw9IiNhOWQ4YjUiPjxyZWN0IHg9IjI2MCIgeT0iMTI1IiB3aWR0aD0iNDM3LjUiIGhlaWdodD0iMzIiLz48cmVjdCB4PSIyNjAiIHk9IjI2NSIgd2lkdGg9IjQ2Ljg3NSIgaGVpZ2h0PSIzMiIvPjwvZz48ZyBmaWxsPSIjMTQyNTNkIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyI+PHRleHQgeD0iMTgwIiB5PSI5OCI+UnVsZSBBPC90ZXh0Pjx0ZXh0IHg9IjE4MCIgeT0iMTQ4Ij5SdWxlIEI8L3RleHQ+PHRleHQgeD0iMTgwIiB5PSIyMzgiPlJ1bGUgQTwvdGV4dD48dGV4dCB4PSIxODAiIHk9IjI4OCI+UnVsZSBCPC90ZXh0Pjx0ZXh0IHg9IjYwMCIgeT0iOTgiPjY1JTwvdGV4dD48dGV4dCB4PSI3MTAiIHk9IjE0OCI+ODcuNSU8L3RleHQ+PHRleHQgeD0iMzIwIiB5PSIyMzgiPjUlPC90ZXh0Pjx0ZXh0IHg9IjMyMCIgeT0iMjg4Ij45LjM3NSU8L3RleHQ+PHRleHQgeD0iNDAiIHk9IjM2NSI+QXV0aG9yZWQgYXJpdGhtZXRpYyBmaXh0dXJlLiBObyBwYXRpZW50cyBvciB0cmFpbmVkIG1vZGVscy48L3RleHQ+PC9nPjwvc3ZnPgo=" alt="两条合成规则的召回率和假警报比例。"><figcaption><p class="original" lang="en">Recall and false-alert proportions for the two synthetic rules.</p><div class="translation">两条合成规则的召回率和假警报比例。</div></figcaption></figure><section id="T001" data-search><h3>Synthetic rule outcomes / 合成规则结果</h3><div class="table-scroll"><table><caption>Counts from the authored CSV / 自编 CSV 计数</caption><tr><th scope="col"><span class="cell-original">Condition</span><span class="cn">条件</span></th><th scope="col"><span class="cell-original">Flagged error reports</span><span class="cn">标记的错误报告</span></th><th scope="col"><span class="cell-original">Flagged correct reports</span><span class="cn">标记的正确报告</span></th></tr><tr><th scope="row"><span class="cell-original">Rule A</span><span class="cn">规则 A</span></th><td><span class="cell-original">26</span></td><td><span class="cell-original">8</span></td></tr><tr><th scope="row"><span class="cell-original">Rule B</span><span class="cn">规则 B</span></th><td><span class="cell-original">35</span></td><td><span class="cell-original">15</span></td></tr></table></div></section><section id="claims"><h2>主张—证据矩阵 · 分析者重构</h2><div class="table-scroll"><table><tr><th>主张</th><th>来源与逐字证据</th><th>支持范围</th></tr><tr id="C001"><th scope="row">规则 B 的召回率更高，但误报比例也更高。</th><td><blockquote lang="en">Recall rises from 0.65 to 0.875</blockquote><a href="#P004">P004</a></td><td>仅限给定的合成规则与样本；不代表真实人机实验。</td></tr><tr id="C002"><th scope="row">现有例子不能确定哪条规则更有用。</th><td><blockquote lang="en">the demonstration does not establish which rule is more useful</blockquote><a href="#P005">P005</a></td><td>缺少漏检与误报代价，不能从单项指标推出净收益。</td></tr></table></div></section><section id="argument"><h2>论证关系 · 分析者重构</h2><div class="graph-scroll"><svg viewBox="0 0 1040 230" role="img" aria-label="分析者重构的论证依赖"><defs><marker id="graph-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#536277"/></marker></defs><path d="M230 58 L274 58" stroke="#536277" fill="none" marker-end="url(#graph-arrow)"/><path d="M490 58 L534 58" stroke="#536277" fill="none" marker-end="url(#graph-arrow)"/><path d="M230 158 L794 58" stroke="#536277" fill="none" marker-end="url(#graph-arrow)"/><path d="M750 58 L794 58" stroke="#536277" fill="none" marker-end="url(#graph-arrow)"/><a href="#P003"><rect x="20" y="30" width="210" height="56" rx="3" fill="#f0ece2" stroke="#14253d"/><text x="125" y="64" text-anchor="middle" font-size="14">原始计数</text></a><a href="#P004"><rect x="280" y="30" width="210" height="56" rx="3" fill="#f0ece2" stroke="#14253d"/><text x="385" y="64" text-anchor="middle" font-size="14">指标与分母</text></a><a href="#C001"><rect x="540" y="30" width="210" height="56" rx="3" fill="#f0ece2" stroke="#14253d"/><text x="645" y="64" text-anchor="middle" font-size="14">收益与代价并存</text></a><a href="#P005"><rect x="20" y="130" width="210" height="56" rx="3" fill="#f0ece2" stroke="#14253d"/><text x="125" y="164" text-anchor="middle" font-size="14">缺少代价测量</text></a><a href="#C002"><rect x="800" y="30" width="210" height="56" rx="3" fill="#f0ece2" stroke="#14253d"/><text x="905" y="64" text-anchor="middle" font-size="14">效用仍不确定</text></a></svg></div><ul><li><a href="#P003">P003</a> 计数支持比率 <a href="#P004">P004</a></li><li><a href="#P004">P004</a> 支持 <a href="#C001">C001</a></li><li><a href="#P005">P005</a> 限定 <a href="#C002">C002</a></li><li><a href="#C001">C001</a> 不等于效用判断 <a href="#C002">C002</a></li></ul></section><section><h2>整体评价</h2><ul><li>较强部分是全部计数可以由 CSV 直接复算。</li><li>主要限制是数据和规则均由作者构造，不能估计真实泛化性能。</li></ul></section><section><h2>学习迁移</h2><ul><li>先报告计数，再给出比率。</li><li>保持不同指标的分母清晰。</li><li>将作者表述和分析者评价分开。</li></ul></section><section><h2>后续研究问题</h2><ul><li>在真实且独立的样本上，两个规则的收益与代价会如何变化？</li></ul></section><section id="references"><h2>参考文献与来源</h2><ol></ol></section><section id="notes"><h2>Source &amp; Analysis Notes</h2><p>来源为本目录 source.md 和 reports.csv。无患者数据，无第三方论文全文，无外部附件。中文和批注为配套自编说明。</p><p>构建器只预渲染准备好的数据，不提取或翻译论文，也不会生成审阅通过声明。重建后，旧文件摘要不匹配时应重新审阅。</p></section></main><script>/* Static reader controls; content remains readable without this script. */
+'use strict';
+(() => {
+  const all = selector => [...document.querySelectorAll(selector)];
+  const one = selector => document.querySelector(selector);
+  const units = all('.unit');
+  const entries = all('[data-search]');
+  const body = document.body;
+  let hits = [], hitIndex = -1, onlyDeep = false, searchState = null;
+  let printState = null, ticking = false;
+
+  function applyFilter() {
+    units.forEach(unit => unit.classList.toggle('hidden', onlyDeep && unit.dataset.depth !== 'deep'));
+  }
+  function reveal(element) {
+    element.classList.remove('hidden');
+    for (let parent = element; parent; parent = parent.parentElement) {
+      if (parent.tagName === 'DETAILS') parent.open = true;
+    }
+    if (element.matches('.unit')) {
+      const annotation = element.querySelector('details');
+      if (annotation) annotation.open = true;
+    }
+  }
+  function revealSearchResult(element) {
+    // A match must be visible even when it belongs to a hidden translation/annotation.
+    body.dataset.mode = 'bilingual';
+    one('#mode').value = 'bilingual';
+    body.classList.remove('no-annotations');
+    one('#annotations').checked = true;
+    reveal(element);
+  }
+  function jump(delta) {
+    if (!hits.length) return;
+    hits.forEach(element => element.classList.remove('search-hit'));
+    hitIndex = (hitIndex + delta + hits.length) % hits.length;
+    const element = hits[hitIndex];
+    revealSearchResult(element);
+    element.classList.add('search-hit');
+    element.scrollIntoView({block: 'center'});
+    one('#results').textContent = `${hitIndex + 1} / ${hits.length} 个匹配单元`;
+  }
+  function search() {
+    all('.search-hit').forEach(element => element.classList.remove('search-hit'));
+    const term = one('#search').value.trim().toLocaleLowerCase();
+    if (!term) { clearSearch(); return; }
+    if (!searchState) searchState = {mode: body.dataset.mode || 'bilingual', annotations: !body.classList.contains('no-annotations')};
+    hits = entries.filter(element => element.textContent.toLocaleLowerCase().includes(term));
+    hitIndex = -1;
+    one('#results').textContent = `${hits.length} 个匹配单元`;
+    if (hits.length) jump(1);
+  }
+  function clearSearch() {
+    one('#search').value = '';
+    hits = []; hitIndex = -1;
+    all('.search-hit').forEach(element => element.classList.remove('search-hit'));
+    if (searchState) {
+      body.dataset.mode = searchState.mode;
+      one('#mode').value = searchState.mode;
+      body.classList.toggle('no-annotations', !searchState.annotations);
+      one('#annotations').checked = searchState.annotations;
+      searchState = null;
+    }
+    applyFilter();
+    one('#results').textContent = '搜索已清除';
+    one('#search').focus();
+  }
+  function beforePrint() {
+    // Some browsers emit beforeprint more than once for the same preview.
+    if (printState !== null) return;
+    printState = all('details').map(element => [element, element.open]);
+    printState.forEach(([element]) => { element.open = true; });
+  }
+  function afterPrint() {
+    if (printState === null) return;
+    printState.forEach(([element, open]) => { element.open = open; });
+    printState = null;
+  }
+  function progress() {
+    const total = document.documentElement.scrollHeight - innerHeight;
+    const value = total > 0 ? Math.max(0, Math.min(100, scrollY / total * 100)) : 0;
+    one('#progress').value = value;
+    one('#progress-text').textContent = `浏览 ${Math.round(value)}%`;
+    const visible = units.filter(element => !element.classList.contains('hidden') && element.getBoundingClientRect().top <= 220);
+    const active = visible[visible.length - 1];
+    if (active) {
+      all('.reading-current').forEach(element => element.classList.remove('reading-current'));
+      active.classList.add('reading-current');
+      one('#current').textContent = active.id + ' · ' + active.dataset.section;
+    }
+    ticking = false;
+  }
+
+  one('#deep').addEventListener('change', event => { onlyDeep = event.target.checked; applyFilter(); });
+  one('#mode').addEventListener('change', event => {
+    body.dataset.mode = event.target.value;
+    if (searchState) searchState.mode = event.target.value;
+  });
+  one('#annotations').addEventListener('change', event => {
+    body.classList.toggle('no-annotations', !event.target.checked);
+    if (searchState) searchState.annotations = event.target.checked;
+  });
+  all('[data-hl]').forEach(control => control.addEventListener('change', () => {
+    if (!['claim', 'concept', 'evidence', 'limitation', 'method'].includes(control.dataset.hl)) return;
+    all('.hl.' + control.dataset.hl).forEach(mark => mark.classList.toggle('off', !control.checked));
+  }));
+  one('#expand').onclick = () => all('.annotation').forEach(element => { element.open = true; });
+  one('#collapse').onclick = () => all('.annotation').forEach(element => { element.open = false; });
+  one('#search-go').onclick = search;
+  one('#search').onkeydown = event => { if (event.key === 'Enter') { event.preventDefault(); search(); } };
+  one('#prev').onclick = () => jump(-1);
+  one('#next').onclick = () => jump(1);
+  one('#clear').onclick = clearSearch;
+  all('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+    let target = link.getAttribute('href').slice(1);
+    try { target = decodeURIComponent(target); } catch (_) { /* Keep literal malformed fragments. */ }
+    const element = document.getElementById(target);
+    if (element) reveal(element);
+  }));
+  window.addEventListener('beforeprint', beforePrint);
+  window.addEventListener('afterprint', afterPrint);
+  one('#print').onclick = () => window.print();
+  addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(progress); }
+  }, {passive: true});
+  body.classList.add('js');
+  one('#controls').hidden = false;
+  progress();
+})();
+</script></body></html>

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "T001",
+    "title": "Synthetic rule outcomes / 合成规则结果",
+    "caption": "Counts from the authored CSV / 自编 CSV 计数",
+    "rows": [
+      [
+        "Condition",
+        "Flagged error reports",
+        "Flagged correct reports"
+      ],
+      [
+        "Rule A",
+        "26",
+        "8"
+      ],
+      [
+        "Rule B",
+        "35",
+        "15"
+      ]
+    ],
+    "label_translations": {
+      "Condition": "条件",
+      "Flagged error reports": "标记的错误报告",
+      "Flagged correct reports": "标记的正确报告",
+      "Rule A": "规则 A",
+      "Rule B": "规则 B"
+    }
+  }
+]

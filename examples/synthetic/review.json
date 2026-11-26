@@ -1,0 +1,12 @@
+{
+  "file_sha256": "2e380fea5a5a6363147df1d645ce64c5e104dcb1d49107a7f29c3a6a4d8f7366",
+  "content_review": {
+    "status": "passed",
+    "scope": "Authored synthetic fixture reviewed against six source paragraphs, exact CSV counts (40/160;26/8;35/15), paired translations and limitations. No real study or medical evidence."
+  },
+  "browser_review": {
+    "status": "unavailable",
+    "reason": "No browser rendering was performed; this workspace has a prior explicit local-file browser access restriction. CI performs static and mock-DOM checks only.",
+    "plan": "Review in a permitted browser: desktop/narrow layout, keyboard, modes, search visibility/restore, repeated print preview, no-JS and offline opening."
+  }
+}
